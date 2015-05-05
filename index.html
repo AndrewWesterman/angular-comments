@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>A Simple App</title>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+        
+    </head>
+    <body>
+        <header>
+            <h1>Comments</h1>
+            <p>A simple app that allows a user to input comments</p>
+        </header>
+        <main ng-app="Comments">
+            <div class="page-container" ng-controller="CommentsCtrl">
+                <!-- Comment list -->
+                <ul class="comment-list" ng-repeat="comment in comments track by $index">
+                    <li>
+                        <span>{{ comment }}</span>
+                        <button class="bt bt-achieve" ng-click="remove(comment)">Remove</button>
+                    </li>
+                </ul>
+                <ul class="add-comment">
+                    <li>
+                        <input type="text" class="txt" placeholder="New Comment" ng-model="newComment" ng-keyup="add($event)"/>
+                    </li>
+                </ul>
+            </div>        
+        </main>
+        <footer>
+            <!-- <p>this work is released into the public domain</p> -->
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+</html>
