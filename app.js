@@ -1,7 +1,7 @@
 var app = angular.module("Comments", []);
 
 app.controller("CommentsCtrl", function($scope){
-    $scope.newComment = "";
+    $scope.commentInput = "";
 
     $scope.comments = [
         "I am awesome",
@@ -16,10 +16,10 @@ app.controller("CommentsCtrl", function($scope){
         }
     };
 
-    $scope.add = function(e){
+    $scope.addCommentFromInputBox = function(e){
         if(e.which && e.which === 13){
-            $scope.comments.push($scope.newComment);
-            $scope.newComment = "";
+            $scope.comments.push($scope.commentInput);
+            $scope.commentInput = "";
         }
     };
 });
